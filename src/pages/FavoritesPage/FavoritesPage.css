@@ -1,0 +1,89 @@
+.favorites-page {
+  padding: 20px 0;
+}
+
+.favorites-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(106, 17, 203, 0.3);
+  border-radius: 20px;
+  border: 2px solid #00ffea;
+  box-shadow: 0 0 15px rgba(0, 255, 234, 0.3);
+}
+
+.favorites-title {
+  font-family: 'Fredoka One', cursive;
+  color: #00ffea;
+  text-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+  font-size: 2.5rem;
+}
+
+.favorites-count {
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.3rem;
+  color: #ff3860;
+  text-shadow: 0 0 5px rgba(255, 56, 96, 0.5);
+}
+
+.loading-favorites {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.no-favorites {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 30px;
+  border: 2px solid #ff3860;
+  box-shadow: 0 0 30px rgba(255, 56, 96, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.no-favorites h3 {
+  font-family: 'Fredoka One', cursive;
+  color: #ff3860;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 56, 96, 0.5);
+}
+
+.no-favorites p {
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.2rem;
+  color: #00ffea;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.portal-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff3860, transparent 70%);
+  opacity: 0.3;
+  filter: blur(40px);
+  animation: portalSpin 6s infinite linear;
+}
+
+@keyframes portalSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+}

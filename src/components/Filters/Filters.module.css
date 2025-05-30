@@ -1,0 +1,230 @@
+.filtersContainer {
+  background: linear-gradient(135deg, rgba(106, 17, 203, 0.7), rgba(37, 117, 252, 0.7));
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border: 2px solid #00ffea;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.filtersContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(45deg,
+      transparent 48%,
+      rgba(0, 255, 234, 0.1) 50%,
+      transparent 52%);
+  background-size: 10px 10px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.filtersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.filtersTitle {
+  font-family: 'Fredoka One', cursive;
+  color: #00ffea;
+  text-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.activeFilters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.activeFilter {
+  background: rgba(0, 0, 0, 0.5);
+  color: #00ffea;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #00ffea;
+}
+
+.removeFilter {
+  background: transparent;
+  border: none;
+  color: #ff3860;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.removeFilter:hover {
+  transform: scale(1.2);
+}
+
+.filterGroups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filterGroup {
+  flex: 1;
+  min-width: 200px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 15px;
+  border: 1px solid rgba(0, 255, 234, 0.3);
+}
+
+.filterGroupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filterGroupTitle {
+  font-family: 'Fredoka One', cursive;
+  color: #00ffea;
+  text-shadow: 0 0 5px rgba(0, 255, 234, 0.5);
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+}
+
+.dropdownIcon {
+  transition: transform 0.3s;
+  color: #00ffea;
+  font-size: 0.8rem;
+}
+
+.dropdownIcon.open {
+  transform: rotate(180deg);
+}
+
+.filterOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scrollableOptions {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Scrollbar styling */
+.scrollableOptions::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollableOptions::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.scrollableOptions::-webkit-scrollbar-thumb {
+  background: #00ffea;
+  border-radius: 10px;
+}
+
+.filterOption {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: 1px solid rgba(0, 255, 234, 0.3);
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-family: 'Comic Neue', cursive;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.filterOption:hover {
+  background: rgba(0, 255, 234, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 255, 234, 0.3);
+}
+
+.filterOption.active {
+  background: linear-gradient(to right, #00b09b, #96c93d);
+  color: #000;
+  font-weight: bold;
+  border-color: #00ffea;
+  box-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+}
+
+.clearButton {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 3px 10px rgba(255, 56, 96, 0.3);
+  align-self: flex-end;
+}
+
+.clearButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 56, 96, 0.5);
+}
+
+.clearButton:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .filterGroups {
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 30px;
+  }
+
+  .filterGroup {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .filtersHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .filtersTitle {
+    font-size: 1.5rem;
+  }
+
+  .filterOption {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}

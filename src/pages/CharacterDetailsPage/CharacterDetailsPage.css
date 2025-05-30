@@ -1,0 +1,435 @@
+.character-details-page {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 20px;
+}
+
+.character-header {
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.character-portal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #00ffea, transparent 70%);
+  filter: blur(60px);
+  opacity: 0.4;
+  z-index: 1;
+  animation: portalSpin 8s infinite linear;
+}
+
+.character-name {
+  font-family: 'Fredoka One', cursive;
+  color: #00ffea;
+  text-shadow:
+    0 0 10px rgba(0, 255, 234, 0.8),
+    0 0 20px rgba(0, 255, 234, 0.6),
+    0 0 30px rgba(0, 255, 234, 0.4);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+  animation: titleGlow 2s infinite alternate;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.character-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
+}
+
+.favorite-button {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-family: 'Comic Neue', cursive;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.favorite-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(106, 17, 203, 0.6);
+}
+
+.favorite-button.active {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.home-link {
+  background: rgba(0, 0, 0, 0.5);
+  color: #00ffea;
+  border: 2px solid #00ffea;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-family: 'Comic Neue', cursive;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-link:hover {
+  background: rgba(0, 255, 234, 0.2);
+  transform: translateY(-3px);
+}
+
+.character-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow:
+    0 0 20px rgba(0, 255, 234, 0.3),
+    inset 0 0 15px rgba(0, 0, 0, 0.7);
+  border: 2px solid #00ffea;
+  position: relative;
+  overflow: hidden;
+  align-items: flex-start;
+}
+
+.character-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(45deg,
+      transparent 48%,
+      rgba(0, 255, 234, 0.1) 50%,
+      transparent 52%);
+  background-size: 10px 10px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.character-image-container {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 3px solid #00ffea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.character-image-container:hover .character-image {
+  transform: scale(1.05);
+}
+
+.status-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.status-badge.alive {
+  background: linear-gradient(to right, #00b09b, #96c93d);
+  color: #000;
+}
+
+.status-badge.dead {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
+}
+
+.status-badge.unknown {
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: white;
+}
+
+.character-info {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-section {
+  background: rgba(106, 17, 203, 0.3);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border: 2px solid #00ffea;
+}
+
+.info-section h2 {
+  font-family: 'Fredoka One', cursive;
+  color: #00ffea;
+  text-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.info-item {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 234, 0.3);
+}
+
+.info-label {
+  font-family: 'Comic Neue', cursive;
+  font-weight: bold;
+  color: #00ffea;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.info-value {
+  font-family: 'Comic Neue', cursive;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.episodes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.episode-badge {
+  background: rgba(37, 117, 252, 0.5);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-family: 'Comic Neue', cursive;
+  font-size: 0.9rem;
+  transition: transform 0.3s;
+}
+
+.episode-badge:hover {
+  transform: translateY(-3px);
+  background: rgba(37, 117, 252, 0.8);
+}
+
+.episode-badge.more {
+  background: rgba(106, 17, 203, 0.5);
+}
+
+.loading-page,
+.error-page,
+.not-found {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.portal-loader {
+  width: 100px;
+  height: 100px;
+  border: 10px solid rgba(0, 255, 234, 0.3);
+  border-top: 10px solid #00ffea;
+  border-radius: 50%;
+  margin: 0 auto 30px;
+  animation: spin 1.5s linear infinite;
+}
+
+.error-portal,
+.not-found-portal {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #ff3860, transparent 70%);
+  opacity: 0.3;
+  filter: blur(50px);
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  animation: portalSpin 6s infinite linear;
+}
+
+.error-page h2,
+.not-found h2 {
+  font-family: 'Fredoka One', cursive;
+  color: #ff3860;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.error-page p,
+.not-found p {
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.2rem;
+  color: #00ffea;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes portalSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow:
+      0 0 5px rgba(0, 255, 234, 0.8),
+      0 0 15px rgba(0, 255, 234, 0.6),
+      0 0 25px rgba(0, 255, 234, 0.4);
+  }
+
+  to {
+    text-shadow:
+      0 0 15px rgba(0, 255, 234, 0.8),
+      0 0 25px rgba(0, 255, 234, 0.6),
+      0 0 35px rgba(0, 255, 234, 0.4);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .character-details-page {
+    padding: 15px;
+  }
+
+  .character-container {
+    padding: 25px;
+  }
+
+  .character-name {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .character-details-page {
+    padding: 10px;
+  }
+
+  .character-name {
+    font-size: 2.5rem;
+  }
+
+  .character-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .character-image-container {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .character-info {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .character-details-page {
+    padding: 5px;
+  }
+
+  .character-name {
+    font-size: 2rem;
+  }
+
+  .character-actions {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .favorite-button,
+  .home-link {
+    width: 90%;
+    max-width: 300px;
+    margin: 0;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .character-container {
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .status-badge {
+    top: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+    padding: 6px 15px;
+  }
+}

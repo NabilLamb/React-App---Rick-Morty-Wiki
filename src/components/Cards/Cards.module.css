@@ -1,0 +1,361 @@
+/* Grid container */
+.container {
+  padding-right: 30px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* Grid items */
+.gridItem {
+  width: 100%;
+  perspective: 1000px;
+  z-index: 1;
+  animation: floatIn 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gridItem:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.gridItem:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.gridItem:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.gridItem:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.gridItem:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.gridItem:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive grid columns */
+@media (min-width: 576px) {
+
+  /* Small devices (landscape phones) */
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+
+  /* Medium devices (tablets) */
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+
+  /* Large devices (desktops) */
+  .gridContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card styling */
+.card {
+  border-radius: 20px !important;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: 3px solid #00ffea !important;
+  box-shadow: 0 10px 30px rgba(106, 17, 203, 0.3);
+  position: relative;
+  z-index: 2;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 40px rgba(106, 17, 203, 0.5);
+}
+
+.cardLink {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+.cardLink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 255, 234, 0.4), transparent 70%);
+  opacity: 0;
+  border-radius: 20px;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.cardLink:hover::after {
+  opacity: 1;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.cardImage {
+  transition: transform 0.5s ease;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.cardBody {
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  padding: 15px !important;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1.4rem;
+  color: #00ffea;
+  text-shadow: 0 0 10px rgba(0, 255, 234, 0.7);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.listGroup {
+  background: transparent !important;
+  border: none !important;
+}
+
+.listItem {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  color: #ffffff;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 0.95rem;
+  padding: 8px 12px !important;
+  border-radius: 10px !important;
+  margin-bottom: 5px;
+}
+
+.infoLabel {
+  color: #00ffea;
+  font-weight: bold;
+  display: inline-block;
+  min-width: 80px;
+  text-align: left;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  animation: pulse 2s infinite;
+}
+
+.badge {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 0.9rem !important;
+  padding: 8px 15px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statusAlive {
+  background: linear-gradient(to right, #00b09b, #96c93d) !important;
+  color: #000 !important;
+}
+
+.statusDead {
+  background: linear-gradient(to right, #ff416c, #ff4b2b) !important;
+  color: white !important;
+}
+
+.statusUnknown {
+  background: linear-gradient(to right, #8e2de2, #4a00e0) !important;
+  color: white !important;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Favorite button */
+.favoriteButton {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.favoriteButton:hover {
+  transform: scale(1.2);
+  background: rgba(255, 56, 96, 0.7);
+  border-color: #ff3860;
+}
+
+.heartFilled {
+  font-size: 1.5rem;
+  color: #ff3860;
+  text-shadow: 0 0 10px rgba(255, 56, 96, 0.8);
+  animation: pulseHeart 0.8s ease;
+}
+
+.heartOutline {
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes pulseHeart {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* No results styling */
+.noResults {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 30px;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ff3860;
+  box-shadow: 0 0 30px rgba(255, 56, 96, 0.4);
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.noResults h2 {
+  font-family: "Fredoka One", cursive;
+  color: #ff3860;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 56, 96, 0.5);
+}
+
+.noResultsText {
+  font-family: "Comic Neue", cursive;
+  font-size: 1.4rem;
+  color: #00ffea;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+.portalAnimation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff3860, transparent 70%);
+  opacity: 0.3;
+  filter: blur(40px);
+  animation: portalSpin 6s infinite linear;
+}
+
+@keyframes portalSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+}

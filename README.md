@@ -5,7 +5,7 @@
 
 Explore the multiverse of Rick and Morty characters in this dynamic React-powered wiki portal!
 
-![App Screenshot](https://example.com/path-to-screenshot.png) <!-- Add actual screenshot URL -->
+![image alt](https://example.com/path-to-screenshot.png) <!-- Add actual screenshot URL -->
 
 ## 🚀 Live Demo
 [View Live Deployment](https://your-username.github.io/rick-morty-wiki/)

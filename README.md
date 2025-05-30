@@ -1,11 +1,8 @@
 # Rick & Morty Wiki 🧪🌌
-[![License: MIT]([https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT](https://github.com/NabilLamb/React-App---Rick-Morty-Wiki/blob/06fea2213a1415f4c14d407704628a628d8529d5/Screenshot%202025-05-30%20202243.png))
-
-# React-App---Rick-Morty-Wiki
 
 Explore the multiverse of Rick and Morty characters in this dynamic React-powered wiki portal!
 
-![image alt](https://example.com/path-to-screenshot.png) <!-- Add actual screenshot URL -->
+![image alt]([https://example.com/path-to-screenshot.png](https://github.com/NabilLamb/React-App---Rick-Morty-Wiki/blob/bd54c33f200d743967e7363d92534b7a1a4e8cb6/Screenshot%202025-05-30%20202243.png))
 
 ## 🚀 Live Demo
 [View Live Deployment](https://your-username.github.io/rick-morty-wiki/)

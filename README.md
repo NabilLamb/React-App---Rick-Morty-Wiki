@@ -48,17 +48,17 @@ src/
 
 ⚡️ Quick Start
 Clone the repository:
-git clone https://github.com/your-username/rick-morty-wiki.git
-cd rick-morty-wiki
+git clone https://github.com/NabilLamb/React-App---Rick-Morty-Wiki.git
+cd React-App---Rick-Morty-Wiki
 
 Install dependencies:
 npm install
-# or
+or
 yarn install
 
 Start development server:
 npm run dev
-# or
+or
 yarn dev
 
 Open in browser: http://localhost:5173

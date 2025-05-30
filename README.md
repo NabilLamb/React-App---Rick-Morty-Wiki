@@ -4,9 +4,6 @@ Explore the multiverse of Rick and Morty characters in this dynamic React-powere
 
 ![image alt](https://github.com/NabilLamb/React-App---Rick-Morty-Wiki/blob/bd54c33f200d743967e7363d92534b7a1a4e8cb6/Screenshot%202025-05-30%20202243.png)
 
-## 🚀 Live Demo
-[View Live Deployment](https://your-username.github.io/rick-morty-wiki/)
-
 ## ✨ Features
 - **Character Browser**: Explore all characters from the Rick and Morty universe
 - **Advanced Search**: Filter by:
